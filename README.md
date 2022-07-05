@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+## 1. Resumen del Proyecto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En este proyecto construiremos una aplicación para tomar notas, que nos permita
+crear, editar, eliminar y consultarlas en cualquier momento.
 
-## Available Scripts
+No existe día que no tomemos notas, siempre necesitamos apuntar alguna
+dirección, número telefónico, notas de alguna reunión o guardar nuestras URLs
+favoritas para poder consultarlas más tarde. Muchas veces para esta actividad
+utilizamos libretas o agendas que terminan siendo olvidadas, o anotamos de
+manera dispersa de tal manera que perdemos de vista la prioridad y el propósito
+de la nota lo cual da como resultado una nota perdida.
 
-In the project directory, you can run:
+El objetivo principal de este proyecto es aprender a construir una _interfaz
+web_ usando el _framework_ elegido. Todos estos frameworks de Frontend atacan el
+mismo problema: **cómo mantener la interfaz y el estado sincronizados**. Así que
+esta experiencia espera familiarizarte con el concepto de _estado de pantalla_,
+y cómo cada cambio sobre el estado se va a ir reflejando en la interfaz (por
+ejemplo, cada vez que agregamos una _nota_, la interfaz debe actualizar la lista
+de notas).
 
-### `npm start`
+## 2. Consideraciones generales
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Este proyecto se debe "resolver" de forma individual.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* La duración estimada del proyecto es de 4 sprints, con una duración de una
+  semana cada uno.
 
-### `npm test`
+* Trabaja en una historia hasta terminarla antes de pasar a la siguiente.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* La aplicación debe ser un _Single Page App_. Las notas serán realizadas desde
+una _tablet_, pero **no debe ser una app nativa**, sino una web app que sea
+**responsive** y pueda funcionar **offline**.
 
-### `npm run build`
+* Necesitamos pensar bien en el aspecto UX de quienes van a tomar las notas, el
+tamaño y aspecto de los botones, la visibilidad del estado actual del pedido,
+etc.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Implementar pruebas unitarias de tus componentes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 3. Criterios de aceptación mínimos del proyecto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Definición del producto
 
-### `npm run eject`
+### Historias de usuaria
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### [Historia de usuaria 1] Debería poder crear cuenta, iniciar y cerrar sesión
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Yo como usuaria debo poder crear una cuenta y autenticarme usando login de
+Google para acceder a mis notas.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+***
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### [Historia de usuaria 2] Debería poder tomar nota
 
-## Learn More
+Yo como usuaria quiero tomar nota para no depender de mi mala
+memoria y tener presente en todo momento los apuntes ó cosas importantes que
+antes escribía en papel.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+***
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### [Historia de usuaria 3] Debería poder ver las notas
 
-### Code Splitting
+Yo como usuaria quiero leer mis notas para recordar lo que escribí
+antes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+***
 
-### Analyzing the Bundle Size
+#### [Historia de usuaria 4] Debería poder editar las notas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Yo como usuaria quiero editar notas para poder modificar lo que
+escribí antes.
 
-### Making a Progressive Web App
+***
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### [Historia de usuaria 5] Debería poder borrar notas
 
-### Advanced Configuration
+Yo como usuaria quiero borrar una nota para no volver a verla.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+***
 
-### Deployment
+##### Criterios de aceptación
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Lo que debe ocurrir para que se satisfagan las necesidades del usuario
 
-### `npm run build` fails to minify
+* Anotar un título a mi nota
+* Agregar el contenido de mi nota.
+* Ver todas mis notas.
+* Ver la última modificación de la nota.
+* Modificar las notas.
+* Eliminar notas.
+* Se ve y funciona bien en una _Tablet_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##### Definición de terminado
+
+Lo acordado que debe ocurrir para decir que la historia está terminada.
+
+* Debes haber recibido _code review_ de al menos una compañera.
+* Haces _test_ unitarios y, además, has testeado tu producto manualmente.
+* Desplegaste tu aplicación y has etiquetado tu versión 
+
+## 4. Consideraciones técnicas
+
+El proyecto deberá contener los siguientes archivos base de configuración,
+aunque no serán los únicos archivos que quizás tendrás que crear.
+
+* `README.md` es donde se encontrará la descripción del proyecto y elementos
+  relevantes de tu proyecto.
+* `.editorconfig` este archivo contiene la configuración para editores de texto.
+* `.gitignore`  este archivo contiene reglas para ignorar `node_modules` u otras
+  carpetas que no deban incluirse en control de versiones (`git`).
+* `.eslintrc` este archivo contiene reglas para formatear el código además de
+  ser una buena practica tener configurado un linter.
+
+Para este proyecto necesitas crear una Web App con **una librería o
+framework de JavaScript** (`React`, `Angular` o `Vue`) y **Firebase**.
+
+Para este proyecto tendrás que manejar _vistas_. Esto significa que cada sección
+tendrá su propia URL, la cual indica que _vista_ o _componente_ será mostrado en
+pantalla. Para ello necesitaremos investigar acerca de _la API para el manejo de
+rutas (en la librería o framework que elijas)_ y el concepto de _Single Page
+Application_.
+
+## 5. Hacker Edition
+
+Una vez que hayas terminado las funcionalidades base del proyecto, puedes
+pasarte a esta sección.
+
+* Si la usuaria empieza a escribir una nota y por alguna razón la pestaña del
+  navegador se cierra, cuando la vuelva a abrir, la nota debería mostrarse como
+  estaba.
+* Subir imágenes.
+* Ver el número de veces que he editado mi nota.
+* Consumo de API/s (Google Maps, Spotify, Pinterest, etc.)
+* Progressive Web App (PWA).
+* Puedes crear categorías y clasificar por tipo de nota.
+* Guardar el color de la nota.
+* Crear una nota como publica.
