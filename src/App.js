@@ -1,26 +1,19 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
+import { Button } from "react-bootstrap";
+import styles from "./App.module.css";
 import "./index.js";
-import Home from "./components/views/login/Home";
-import Register from "./components/views/register/Register";
-import Board from "./components/views/board/Board";
-import NotFound from "./components/views/NotFound";
-import NavMenu from "./components/layout/navbar/Navbar";
-import Footer from "./components/layout/footer/Footer";
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavMenu></NavMenu>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/Board" element={<Board />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer></Footer>
-    </BrowserRouter>
+    <div className={styles.app}>
+      <h3 className={styles.title}>LabNotes</h3>
+      <h4>The Best Planner</h4>
+      <div className={styles.btnInline}>
+        <Button className={styles.btn}>Sign In</Button>
+        <Button className={styles.btn}>Google</Button>
+      </div>
+      <Button className={styles.btn}>Create Account</Button>
+    </div>
   );
 }
 
