@@ -1,19 +1,20 @@
 import React from "react";
-import Nav from "react-bootstrap/Nav";
+import {Nav, Navbar} from "react-bootstrap";
+import styles from "./footer.module.css"
 
 function Footer() {
   return (
-    <Nav className="justify-content-center" fixed="bottom" defaultActiveKey="/home" as="ul">
-      <Nav.Item as="li">
+    <Navbar className={styles.footerList} fixed="bottom">
+      <Nav.Item >
         <Nav.Link href="/home">Link</Nav.Link>
       </Nav.Item>
-      <Nav.Item as="li">
+      <Nav.Item>
         <Nav.Link eventKey="link-1">Link</Nav.Link>
       </Nav.Item>
-      <Nav.Item as="li">
+      <Nav.Item>
         <Nav.Link eventKey="link-2">Link</Nav.Link>
       </Nav.Item>
-    </Nav>
+    </Navbar>
   );
 }
 

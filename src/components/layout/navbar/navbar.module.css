@@ -1,0 +1,14 @@
+.navBrand {
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.titleBrand {
+  color:rgb(117, 77, 154);
+  text-transform: uppercase;
+}
+
+.navCollapse {
+  text-decoration-line: none;
+}
+  
