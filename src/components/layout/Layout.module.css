@@ -1,0 +1,49 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.btn {
+  background-color: #987595;
+  border: 1px solid #987595;
+  margin: .5rem;
+}
+
+.title {
+  font-weight: bold;
+  color:#674965;
+  text-transform: uppercase;
+}
+
+.navBrand {
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.titleBrand {
+  color:rgb(69, 48, 69);
+  text-transform: uppercase;
+}
+
+.footerList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(203, 169, 200, 0.37);
+  padding: .5rem;
+}
+
+.underlineNone{
+  text-decoration: none;
+  color:#674965;
+  font-weight: bold;
+}
+
+.underlineNone:hover{
+  color: rgb(209, 80, 28);
+}

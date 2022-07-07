@@ -1,9 +1,0 @@
-.footerList {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: rgb(29, 3, 29);
-  background-color: rgba(203, 169, 200, 0.37);
-  padding: .5rem;
-}
