@@ -2,19 +2,6 @@ import React from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 
 const Register = () => {
-  // const initialState = {
-  //   userName: " ",
-  //   email: " ",
-  //   password: " "
-  // }
-
-  // const [values, setValues] = useState(initialState);
-
-  // const submitResponse = e => {
-  //   console.log(submitResponse);
-  //onSubmit={submitResponse}
-  // };
-
   return (
     <Container className="m-5 p-5 justify-content-center">
       <div className="register">

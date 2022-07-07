@@ -6,7 +6,11 @@ import { signOutWithEmail } from '../../firebase/auth';
 
 const NavMenu = () => {
   const userSignOut = async () => {
-    await signOutWithEmail();
+    try {
+      await signOutWithEmail();
+    } catch (error) {
+      throw error.message;
+    }
   };
   return (
     <Navbar className={styles.navColor} bg="light" expand="lg">
