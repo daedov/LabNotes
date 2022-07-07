@@ -2,17 +2,15 @@
   "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:import/errors",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:react/recommended"
   ],
-  "plugins": ["react", "import", "jsx-a11y"],
+  "plugins": ["react"],
   "rules": {
     "prettier/prettier": "warn",
     "react/prop-types": 0,
     "indent": ["error", 2],
-    "linebreak-style": 1,
-    "quotes": ["error", "double"]
+    "quotes": ["error", "single"],
+    "linebreak-style": ["error", "unix"]
   },
   "parserOptions": {
     "ECMAVersion": 2021,

@@ -1,7 +1,7 @@
-import React from "react";
-import { Form, Button, Container } from "react-bootstrap";
+import React from 'react';
+import { Form, Button, Container } from 'react-bootstrap';
 
-function Home() {
+const Login = () => {
   return (
     <Container className="home m-5 p-5 justify-content-center">
       <h3>Login</h3>
@@ -23,6 +23,6 @@ function Home() {
       </Form>
     </Container>
   );
-}
+};
 
-export default Home;
+export default Login;
