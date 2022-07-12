@@ -1,28 +1,31 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import styles from './App.module.css';
+import { Route, Routes } from 'react-router-dom';
 import './index.js';
-import { signInWithGoogle } from './firebase/auth';
+import './index.css';
+import Home from './components/views/Home.jsx';
+import Login from './components/views/Login';
+import Register from './components/views/Register';
+import ShowDashboard from './components/views/ShowDashboard';
+import SignOut from './components/views/SignOut';
+import NotFound from './components/layout/NotFound';
+import Footer from './components/layout/Footer';
+import { AuthProvider } from './context/AuthContext';
+import AuthRoute from './components/AuthRoute.jsx';
 
 const App = () => {
-  const googleLogin = async () => {
-    await signInWithGoogle();
-  };
   return (
-    <div className={styles.app}>
-      <h3 className={styles.title}>LabNotes</h3>
-      <h4 className={styles.subtitle}>The Best Planner</h4>
-      <div className={styles.btnInline}>
-        <Button variant="secondary" className={styles.btn}>
-          Sign In
-        </Button>
-        <Button variant="secondary" onClick={googleLogin} className={styles.btn}>
-          Google
-        </Button>
-      </div>
-      <Button variant="secondary" className={styles.btn}>
-        Create Account
-      </Button>
+    <div className="container mx-auto h-screen place-items-center flex">
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/ShowDashboard" element={<AuthRoute><ShowDashboard /></AuthRoute>} />
+          <Route path="/SignOut" element={<SignOut />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </AuthProvider>
+      <Footer></Footer>
     </div>
   );
 };

@@ -9,7 +9,7 @@ const NotFound = () => {
       <h3 className={styles.title}>404 Not Found!</h3>
       <Link to="/">
         <Button variant="secondary" className={styles.btn}>
-          Volver al inicio
+          Go back
         </Button>
       </Link>
     </Container>

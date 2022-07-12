@@ -6,18 +6,8 @@ const Footer = () => {
   return (
     <Navbar className={styles.footerList} fixed="bottom">
       <Nav.Item>
-        <Nav.Link className={styles.underlineNone} href="/home">
-          Gmail
-        </Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link className={styles.underlineNone} eventKey="link-1">
-          Facebook
-        </Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link className={styles.underlineNone} eventKey="link-2">
-          Trello
+        <Nav.Link className={styles.underlineNone} href="https://github.com/daedov/LabNotes">
+          Made with ❤ by daedov
         </Nav.Link>
       </Nav.Item>
     </Navbar>
