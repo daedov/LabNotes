@@ -19,16 +19,6 @@
   text-transform: uppercase;
 }
 
-.navBrand {
-  font-weight: bold;
-  font-size: 35px;
-}
-
-.titleBrand {
-  color:rgb(69, 48, 69);
-  text-transform: uppercase;
-}
-
 .footerList {
   display: flex;
   justify-content: center;
@@ -46,4 +36,10 @@
 
 .underlineNone:hover{
   color: rgb(209, 80, 28);
+}
+
+.border{
+  border: 1px solid #987595;
+  border-radius: 10px;
+  margin: 20px 30px 30px 15px;
 }
