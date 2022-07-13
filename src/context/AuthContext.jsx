@@ -19,13 +19,18 @@ export const UserAuth = () => {
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [initialRender, setInitialRender] = useState(true);   // REGISTER USER WITH EMAIL AND PASSWORD
+  // REGISTER USER WITH EMAIL AND PASSWORD
   const register = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password);
+    const res = createUserWithEmailAndPassword(auth, email, password);
+    const user = res.user;
+    return user; 
+
   };
   // SIGN IN WITH EMAIL AND PASSWORD
-  const login = async (email, password) => {
-    await signInWithEmailAndPassword(auth, email, password);
+  const login = (email, password) => {
+    const res = signInWithEmailAndPassword(auth, email, password);
+    const user = res.user;
+    return user;                
   };
   // SIGN OUT
   const logout = () => {
@@ -33,18 +38,18 @@ export function AuthProvider({ children }) {
   };
   // SIGN IN WITH GOOGLE
   const loginGoogle = () => {
-    signInWithPopup(auth, provider);
+    const res = signInWithPopup(auth, provider);
+    const user = res.user;
+    return user;
   };
 
   useEffect(() => {
-    if (initialRender) {
-      setInitialRender(false);
-      onAuthStateChanged(auth, (currentUser) => {
-        setUser(currentUser);
+      const stateUser = onAuthStateChanged(auth, user => {
+        setUser(user);
         setLoading(false);
       });
-    }
-  }, [initialRender, user, loading]);
+      return stateUser;
+  }, []);
 
   return (
     <userContext.Provider value={{ register, login, user, logout, loading, loginGoogle }}>

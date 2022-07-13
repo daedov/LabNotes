@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserAuth } from '../../context/AuthContext';
+import { UserAuth } from '../context/AuthContext';
 import { Alert } from '../layout/Alert';
 
 const Register = () => {
@@ -10,9 +10,7 @@ const Register = () => {
     password: '',
   });
   const { register } = UserAuth();
-
   const handleChange = ({ target: { name, value } }) => {
-    // console.log(e.target.value, e.target.name);
     setUser({ ...user, [name]: value });
   };
   const [error, setError] = useState();
@@ -22,7 +20,7 @@ const Register = () => {
     try {
       await register(user.email, user.password);
       if (user) {
-        navigate('/ShowDashboard');
+        navigate('/Login');
       }
       console.log('ya se registro');
     } catch (error) {

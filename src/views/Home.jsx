@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import styles from './Home.module.css';
-import { UserAuth } from '../../context/AuthContext';
+import { UserAuth } from '../context/AuthContext';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -10,11 +10,10 @@ const Home = () => {
   const handleGoogle = async () => {
     try {
       await loginGoogle();
-      navigate('/ShowDashboard');
+        navigate('/ShowDashboard');
       console.log('ya se logueo con google');
     } catch (error) {
-      console.log('no se logueo con google');
-        throw error.message;
+      console.log(error.message);
       }
     };
   return (

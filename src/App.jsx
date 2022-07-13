@@ -2,15 +2,15 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './index.js';
 import './index.css';
-import Home from './components/views/Home.jsx';
-import Login from './components/views/Login';
-import Register from './components/views/Register';
-import ShowDashboard from './components/views/ShowDashboard';
-import SignOut from './components/views/SignOut';
-import NotFound from './components/layout/NotFound';
-import Footer from './components/layout/Footer';
+import Home from './views/Home.jsx';
+import Login from './views/Login';
+import Register from './views/Register';
+import ShowDashboard from './views/ShowDashboard';
+import SignOut from './views/SignOut';
+import NotFound from './layout/NotFound';
+import Footer from './layout/Footer';
 import { AuthProvider } from './context/AuthContext';
-import AuthRoute from './components/AuthRoute.jsx';
+import ProtectedRoute from './components/ProtectedRoute.jsx';
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
-          <Route path="/ShowDashboard" element={<AuthRoute><ShowDashboard /></AuthRoute>} />
+          <Route path="/ShowDashboard" element={<ProtectedRoute><ShowDashboard /></ProtectedRoute>} />
           <Route path="/SignOut" element={<SignOut />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
