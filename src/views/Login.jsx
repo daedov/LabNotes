@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserAuth } from '../../context/AuthContext';
+import { UserAuth } from '../context/AuthContext';
 import { Alert } from '../layout/Alert';
 
 const Login = () => {
@@ -10,9 +10,7 @@ const Login = () => {
     password: '',
   });
   const { login } = UserAuth();
-
   const handleChange = ({ target: { name, value } }) => {
-    // console.log(e.target.value, e.target.name);
     setUser({ ...user, [name]: value });
   };
   const [error, setError] = useState();
@@ -28,7 +26,6 @@ const Login = () => {
       setError(error.message);
     }
   };
-
   return (
     <div className="w-full max-w-xs m-auto">
       <form onSubmit={handleSubmit} className="bg-white shadow-md px-8 pt-6 pb-8 mb-4">
