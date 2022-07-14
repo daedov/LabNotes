@@ -35,6 +35,7 @@ export function AuthProvider({ children }) {
   // SIGN OUT
   const logout = () => {
     signOut(auth);
+    setUser(null);
   };
   // SIGN IN WITH GOOGLE
   const loginGoogle = () => {
@@ -45,7 +46,9 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
       const stateUser = onAuthStateChanged(auth, user => {
-        setUser(user);
+        if(user){
+          setUser(user);
+        }
         setLoading(false);
       });
       return stateUser;

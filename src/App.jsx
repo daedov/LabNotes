@@ -2,15 +2,15 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './index.js';
 import './index.css';
-import Home from './views/Home.jsx';
-import Login from './views/Login';
-import Register from './views/Register';
-import ShowDashboard from './views/ShowDashboard';
-import SignOut from './views/SignOut';
+import Home from './components/Home.jsx';
+import Login from './components/Login';
+import Register from './components/Register';
+import ShowDashboard from './components/ShowDashboard';
 import NotFound from './layout/NotFound';
 import Footer from './layout/Footer';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
+import NoteForm from './components/NoteForm.jsx';
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/ShowDashboard" element={<ProtectedRoute><ShowDashboard /></ProtectedRoute>} />
-          <Route path="/SignOut" element={<SignOut />} />
+          <Route path="/NoteForm" element={<ProtectedRoute><NoteForm /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AuthProvider>
