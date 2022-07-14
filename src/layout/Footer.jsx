@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <Navbar className={styles.footerList} fixed="bottom">
       <Nav.Item>
-        <Nav.Link className={styles.underlineNone} href="https://github.com/daedov/LabNotes">
+        <Nav.Link className="font-mono text-fuchsia-900" href="https://github.com/daedov/LabNotes">
           Made with ❤ by daedov
         </Nav.Link>
       </Nav.Item>
