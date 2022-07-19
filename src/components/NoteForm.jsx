@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import { UserAuth } from '../context/AuthContext';
 import { saveNote, getNote, updateNote } from '../firebase/noteProcess';
 // import AlertNote from '../layout/AlertNote'
 
 const NoteForm = () => {
-  const initialValues = {
+  const { user } = UserAuth();
+  const [note, setNote] = useState({
     title: '',
     description: '',
-  };
-  const [note, setNote] = useState(initialValues);
+    user: user.uid,
+  });
+
   const params = useParams();
   const navigate = useNavigate();
 
@@ -23,9 +26,8 @@ const NoteForm = () => {
     if (!params.id) {
       await saveNote(note);
     } else {
-      await updateNote(note, params.id);
+      await updateNote(params.id, note);
     }
-    setNote(initialValues);
     navigate('/ShowDashboard');
   };
   const getNoteById = async (id) => {
@@ -80,7 +82,7 @@ const NoteForm = () => {
         </label>
 
         <button
-                        className="px-3 py-2 mx-1 mt-3 text-sm text-purple-900 bg-violet-200 font-semibold rounded-full border border-purple-300 hover:text-white hover:bg-violet-300 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+          className="px-3 py-2 mx-1 mt-3 text-sm text-purple-900 bg-violet-200 font-semibold rounded-full border border-purple-300 hover:text-white hover:bg-violet-300 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
           type="submit"
         >
           Add Note
