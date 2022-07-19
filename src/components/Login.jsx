@@ -21,9 +21,9 @@ const Login = () => {
     try {
       await login(user.email, user.password);
       navigate('/ShowDashboard');
-      console.log('ya se logueo');
+      console.log('logueo');
     } catch (error) {
-      console.log('no se logueo');
+      console.log('no logueo');
       setError(error.message);
     }
   };
@@ -62,7 +62,7 @@ const Login = () => {
         </div>
         <div>
           <button
-            className="inline-block bg-violet-200 font-mono py-2 px-4 text-center px-4 py-2 mx-1 mt-4 text-sm text-purple-600 font-semi
+            className="inline-block bg-violet-200 font-mono py-2 px-4 text-center mx-1 mt-4 text-sm text-purple-600 font-semi
         bold rounded border border-purple-200 hover:text-white hover:bg-purple-400 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
             type="submit"
           >

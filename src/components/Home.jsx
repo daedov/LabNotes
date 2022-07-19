@@ -10,7 +10,7 @@ const Home = () => {
     try {
       await loginGoogle();
         navigate('/ShowDashboard');
-      console.log('ya se logueo con google');
+      console.log('logueo con google');
     } catch (error) {
       console.log(error.message);
       }

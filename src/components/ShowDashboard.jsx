@@ -35,11 +35,11 @@ const ShowDashboard = () => {
   };
   //CALL TO NOTES LIST
   useEffect(() => {
-    getNotesList();
+    getNotesList()
   }, []);
 
   return (
-    <div className="w-full m-auto flex flex-col justify-items-stretch m-3">
+    <div className="w-full m-auto flex flex-col justify-items-stretch">
       <div className="text-center font-bold uppercase p-3 ">
         <h2 className="font-bold text-4xl text-fuchsia-900">Welcome {user.displayName || user.email}</h2>
         <h5 className="font-mono text-purple-900">Today is {new Date().toLocaleDateString()}</h5>
@@ -48,7 +48,7 @@ const ShowDashboard = () => {
         <button
           className="basis-1/4 font-bold px-2 top-3 right-3 text-purple-900  bg-violet-300 hover:bg-violet-400 active:bg-violet-200 focus:outline-none focus:ring focus:ring-violet-300 rounded p-2 mt-2"
           type="submit"
-          onClick={() => navigate('/NoteForm')}
+          onClick={() => navigate('/Add')}
         >
           Add a New Note
         </button>
@@ -71,14 +71,12 @@ const ShowDashboard = () => {
               <p className="text-slate-500 font-medium">{note.description}</p>
             </div>
             <button
-              key={note.id}
-              onClick={() => navigate(`/NoteForm/${note.id}`)}
+              onClick={() => navigate(`/Edit/${note.id}`)}
               className="px-2 py-2 mx-1 mt-4 text-sm text-purple-900 font-semibold rounded-full border border-purple-300 bg-violet-200 hover:text-white hover:bg-violet-300 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
             >
               Update Note
             </button>
             <button
-              key={note.id}
               onClick={() => {
                 handleDeleteNote(note.id);
               }}

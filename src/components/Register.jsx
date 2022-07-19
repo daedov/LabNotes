@@ -22,9 +22,9 @@ const Register = () => {
       if (user) {
         navigate('/Login');
       }
-      console.log('ya se registro');
+      console.log('registro');
     } catch (error) {
-      console.log('no se registro');
+      console.log('no registro');
       setError(error.message);
     }
   };
@@ -32,7 +32,7 @@ const Register = () => {
   return (
     <div className="w-full max-w-xs m-auto p-auto ">
       <h3 className="font-bold text-4xl tracking-wide text-fuchsia-900 mb-4 text-center">
-        Register
+        Create an Account
       </h3>
       <form
         onSubmit={handleSubmit}
@@ -66,7 +66,7 @@ const Register = () => {
         </div>
         <div>
           <button
-            className="inline-block bg-violet-200 font-mono py-2 px-4 text-center px-4 py-2 mx-1 mt-4 text-sm text-purple-600 font-semi
+            className="inline-block bg-violet-200 font-mono py-2 px-4 text-center mx-1 mt-4 text-sm text-purple-600 font-semi
         bold rounded border border-purple-200 hover:text-white hover:bg-purple-400 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
             type="submit"
           >
